@@ -23,8 +23,8 @@ function Footer() {
       <ul className="list">
         <CustomLink to="/">Home</CustomLink>
         <CustomLink to="/services">Services</CustomLink>
-        <CustomLink to="/aboutUs">About Us</CustomLink>
-        <CustomLink to="/contactUs">Contact Us</CustomLink>
+        <CustomLink to="/aboutUs">About</CustomLink>
+        <CustomLink to="/contactUs">Contact</CustomLink>
         <CustomLink to="/privacyPolicy">Privacy Policy</CustomLink>
       </ul>
 

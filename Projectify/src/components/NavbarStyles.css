@@ -52,6 +52,24 @@ nav {
   align-items: center;
 }
 
+#navbar #login_signup {
+  padding: 0.8rem 1rem;
+  white-space: nowrap;
+  background-color: #fafafa;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+}
+
+#navbar #login_signup:hover {
+  padding: 0.5rem 0.9rem;
+  background-color: #17cf97;
+  font-weight: 750;
+  transition: 0.2s;
+}
+
 @media screen and (max-width: 769px) {
   #navbar {
     display: flex;

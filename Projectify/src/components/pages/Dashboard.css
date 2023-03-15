@@ -1,0 +1,170 @@
+/* PROFILE */
+
+.Card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    background-color: #f1f1f1;
+    width: 300px;
+    height: 100%;
+    margin: 20px;
+    float: left;
+    /* background:linear-gradient(to right, #BCCCFE,#5F6BDD); */
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    width: 50%;
+}
+
+.mid-container-1 {
+    text-align: center;
+}
+
+.mid-container-1 hr {
+    width: 75%;
+}
+
+.mid-container-1 h1 {
+    margin-top: 10px;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.mid-container-1 h4 {
+    margin-top: 6px;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.mid-container-1 p {
+    font-size: 18px;
+    line-height: 16px;
+}
+
+.mid-container-2 {
+    text-align: center;
+}
+
+.mid-container-2 h3 {
+    font-size: 20px;
+}
+
+
+
+.lower-container {
+    margin-top: 10px;
+}
+
+.social-handle {
+    margin: 10px;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.social-handle a {
+    text-decoration: none;
+}
+
+.social-handle a i {
+    padding: 8px;
+}
+
+/* PROJECT STATUS */
+
+.project-status {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #f1f1f1;
+    float: left;
+    width: 50%;
+    padding: 5px;
+    margin: 20px;
+}
+
+.project-container {
+    display: flex;
+}
+
+.project-detail {
+    background-color: #f1f1f1;
+    border: 1px dashed black;
+    padding: 10px;
+    margin: 10px;
+    width: 350px;
+}
+
+.project-detail h2 {
+    font-size: 24px;
+}
+
+/* NOTIFICATION */
+
+.notifi-box {
+    background-color: #f1f1f1;
+	width: 300px;
+    height: 100%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    margin: 20px;
+}
+.notifi-box h2 {
+	font-size: 18px;
+	padding: 8px;
+	border-bottom: 1px solid white;
+	color: #999;
+}
+.notifi-box h2 span {
+	color: #f00;
+}
+.notifi-item {
+	display: flex;
+	border-bottom: 1px solid white;
+	margin-bottom: 20px;
+	cursor: pointer;
+    padding: 5px;
+}
+.notifi-item:hover {
+	background-color: #eee;
+}
+
+.notifi-item .text h4 {
+	color: #777;
+	font-size: 16px;
+    margin-top: 1px;
+    margin-left: 20px;
+}
+.notifi-item .text p {
+	color: #aaa;
+	font-size: 12px;
+    margin-left: 20px;
+    margin-top: 4px;
+}
+
+/* REQUEST */
+
+.request_container {
+    padding: 5px;
+    float: right;
+    clear: right;
+    width: 200px;
+    margin: 20px;
+}
+
+.request_meet {
+    background-color: black;
+    padding: 3px;
+    border-radius: 30px;
+}
+
+.request_meet li {
+    list-style: none;
+}
+
+.request_container li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}

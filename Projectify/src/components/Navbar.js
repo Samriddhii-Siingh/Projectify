@@ -1,5 +1,4 @@
 import { Component } from "react";
-import { render } from "react-dom";
 import "./NavbarStyles.css";
 
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
@@ -40,7 +39,9 @@ class Navbar extends Component {
               <CustomLink to="/project">Projects</CustomLink>
               <CustomLink to="/form">Form</CustomLink>
               <CustomLink to="/dashboard">Dashboard</CustomLink>
-              <CustomLink to="/login">Login</CustomLink>
+              <CustomLink to="/login" id="login_signup">
+                Login
+              </CustomLink>
             </ul>
           </div>
 

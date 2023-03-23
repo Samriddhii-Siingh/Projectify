@@ -1,20 +1,23 @@
-.footer {
+.footer--pin {
   font-family: "Segoe UI", sans-serif;
   font-weight: 400;
   padding: 20px;
   background-color: #1b2430;
-  position: absolute;
+  display: flex;
+  flex-direction: column;
+  position: static;
+  margin-top: calc(100% - 70%);
   bottom: 0;
   width: 100%;
 }
 
-.footer .social {
+.footer--pin .social {
   text-align: center;
   padding-bottom: 25px;
   color: #fff;
 }
 
-.footer .social a {
+.footer--pin .social a {
   font-size: 24px;
   color: inherit;
   border: 1px solid #fff;
@@ -28,11 +31,11 @@
   opacity: 0.75;
 }
 
-.footer .social a:hover {
+.footer--pin .social a:hover {
   opacity: 0.9;
 }
 
-.footer ul {
+.footer--pin ul {
   margin-top: 0;
   padding: 0;
   list-style: none;
@@ -42,23 +45,23 @@
   text-align: center;
 }
 
-.footer ul a {
+.footer--pin ul a {
   color: inherit;
   text-decoration: none;
   opacity: 0.8;
   color: #fff;
 }
 
-.footer ul li {
+.footer--pin ul li {
   display: inline-block;
   padding: 0 15px;
 }
 
-.footer ul li a:hover {
+.footer--pin ul li a:hover {
   opacity: 1;
 }
 
-.footer .copyright {
+.footer--pin .copyright {
   margin-top: 15px;
   text-align: center;
   font-size: 13px;

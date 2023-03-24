@@ -1,89 +1,88 @@
-.card {  
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 16px;
-    background-color: #f1f1f1;
-    width: 500px;  
-    margin-top: 100px;
-    margin-right: 100px;
-    border-radius: 10px;
-    background:linear-gradient(to left, #BCCCFE,#A3C6D8);
-    float: right;
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  background-color: #f1f1f1;
+  width: 500px;
+  margin-top: 100px;
+  margin-right: 100px;
+  border-radius: 10px;
+  background: linear-gradient(to left, #bcccfe, #a3c6d8);
+  float: right;
 }
-form{
-    padding: 15px;
-    background: fixed;;
-    font-family: 'Patua One',cursive;
+form {
+  padding: 15px;
+  background: fixed;
+  font-family: "Patua One", cursive;
 }
-h1{
-    text-align: center;
-    font-family: 'Patua One',cursive;
+h1 {
+  text-align: center;
+  font-family: "Patua One", cursive;
 }
-input{
-    width: 95%;
-    margin-top: 20px;
-    height: 40px;
-    border: none;
-    border-radius: 10px;
-    font-family: 'Patua One',cursive;
-    margin-left: 10px;
-    background: white;
+input {
+  width: 95%;
+  margin-top: 20px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  font-family: "Patua One", cursive;
+  margin-left: 10px;
+  background: white;
 }
 
-.submit-button{
-    padding:10px 20px;
-    border:none;
-    border-radius: 5px;
-    background-color: rgb(98, 8, 121);
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 40px;
-    margin-left: 41%;
+.submit-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(98, 8, 121);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 40px;
+  margin-left: 41%;
 }
-.submit-button:hover{
-    background-color: #da12c9;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 15px rgba(0,0,0,1);
+.submit-button:hover {
+  background-color: #da12c9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 1);
 }
-.forgot-password{
-    margin-top:20px;
-    color: black;
-    font-size: 18px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    
+.forgot-password {
+  margin-top: 20px;
+  color: black;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
 }
-.forget-password:hover{
-    color: red;
+.forget-password:hover {
+  color: red;
 }
-::placeholder{
-    font-size: 18px;
-    padding-left: 10px;
+::placeholder {
+  font-size: 18px;
+  padding-left: 10px;
 }
-img{
-    margin-top: 20px;
-    margin-left: 50px;
-    width: 800px;
-    float: left;
-    border-radius: 10px;
+.logo-container {
+  margin-top: 20px;
+  margin-left: 50px;
+  width: 800px;
+  float: left;
+  border-radius: 10px;
 }
-.google-button{
-    margin-top: 10px;
-    padding: 10px 20px;
-    border:none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    margin-left: 32%;
-    align-items: center;
-    height: 40px;
-    width: 180px;
+.google-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  margin-left: 32%;
+  align-items: center;
+  height: 40px;
+  width: 180px;
 }
-.google-button:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 8px 15px rgba(0,0,0,1);
+.google-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 1);
 }

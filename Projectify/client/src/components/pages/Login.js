@@ -1,23 +1,25 @@
 import React, { Component } from "react";
 import "./Login.css";
 import logo from "./assets/login2.gif";
+import { Link } from "react-router-dom";
 
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      designation: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const { email, password } = this.state;
-    console.log(email, password );
+    const { email, password, designation } = this.state;
+    console.log(email, password, designation);
     fetch("http://localhost:5000/login", {
-      method: 'POST',
+      method: "POST",
       crossDomain: true,
       headers: {
         "Content-Type": "application/json",
@@ -26,56 +28,89 @@ class Login extends Component {
       },
       body: JSON.stringify({
         email,
-        password
+        password,
+        designation
       }),
     })
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data, "userRegister");
-      if(data.status == "ok") {
-        alert("Login successful");
-        window.localStorage.setItem("token", data.data);
-        window.localStorage.setItem("loggedIn", true);
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data, "userRegister");
+        if (data.status == "ok") {
+          alert("Login successful");
+          window.localStorage.setItem("token", data.data);
+          window.localStorage.setItem("loggedIn", true);
 
-        window.location.href = "./dashboard";
-      }
-    })
+          window.location.href = "./dashboard";
+        }
+      });
   }
 
   render() {
     return (
       <>
-        <div>
+        <div className="login-img">
           <img src={logo} alt="loading" />
         </div>
-        <div className="card">
+        <div className="login-card">
           <h1>Login HERE</h1>
-          <form className="form" onSubmit={this.handleSubmit}>
-            <input
-              className="email"
+          <form className="login-form" onSubmit={this.handleSubmit}>
+          <input
               type="email"
               id="email"
+              className="login-email"
               placeholder="Email"
-              onChange={e => this.setState({email: e.target.value})}
+              onChange={e => {
+                const re = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+                if (re.test(e.target.value)) {
+                  this.setState({ email: e.target.value });
+                } else {
+                  // alert("Please enter a valid email address.");
+                }
+              }}
+              required
             />
             <input
-              className="password"
+              className="login-password"
               type="password"
               id="password"
               placeholder="Password"
-              onChange={e => this.setState({password: e.target.value})}
+              onChange={(e) => this.setState({ password: e.target.value })}
+              minLength={8}
+              required
             />
-            <button className="submit-button" type="submit">
+
+            <div className="signup-designation-container">
+              <label className="signup-designation-note">I'm a </label>
+              <br />
+              <input
+                type="Radio"
+                name="signup-designation"
+                value="mentor"
+                onChange={(e) =>
+                  this.setState({ designation: e.target.value })
+                }
+                required
+              />
+              <label>Mentor</label>
+              <br />
+              <input
+                type="Radio"
+                name="signup-designation"
+                value="student"
+                onChange={(e) =>
+                  this.setState({ designation: e.target.value })
+                }
+                required
+              />
+              <label>Student</label>
+            </div>
+
+            <br />
+            <button className="login-submit-button" type="submit">
               Sign-In
             </button>
-            <button className="google-button" onClick={this.handleGoogleLogin}>
-              Sign In with Google
-              <span className="google-logo"></span>
-            </button>
-            <p className="forgot-password">
-              <a href="/#" onClick={this.handleForgetPassword}>
-                New User?
-              </a>
+            <p className="login-forgot-password">
+              <Link to="/signup">New User?</Link>
             </p>
           </form>
         </div>

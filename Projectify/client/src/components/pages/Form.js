@@ -34,14 +34,14 @@ function Form() {
               <option value="HTML">HTML</option>
             </select>
           </div>
-          <br />
-          <input type="text" className="assign-card-text" placeholder="Project" />
+          <input type="text" className="assign-project" placeholder="Project"/>
           <br />
           <input
             type="textArea"
             className="assign-card-text"
             placeholder="Project Details"
           />
+         
           <br />
           <button type="submit" className="assign-button">
             Register

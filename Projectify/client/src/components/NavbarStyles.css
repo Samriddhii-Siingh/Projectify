@@ -1,0 +1,126 @@
+/* Styles for navigation bar */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1b2430;
+  padding: 20px 80px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* Styles for site title */
+.site-title img {
+  height: 6.125rem;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Styles for navigation bar list */
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styles for navigation bar list items */
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* Styles for navigation bar links */
+#navbar li a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+
+/* Styles for navigation bar link hover and active states */
+#navbar li a:hover,
+#navbar li a.active {
+  color: #17cf97;
+}
+
+/* Styles for navigation bar list item hover and active states */
+#navbar li:hover::after,
+#navbar li.active::after {
+  content: "";
+  width: 30%;
+  height: 2px;
+  background: #17cf97;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+}
+
+/* Styles for mobile view */
+#mobile {
+  display: none;
+}
+
+/* Styles for mobile view icons */
+#mobile i {
+  color: #fff;
+  align-items: center;
+}
+
+/* Styles for login/signup button */
+#navbar #login_signup {
+  padding: 0.8rem 1rem;
+  white-space: nowrap;
+  background-color: #fafafa;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Styles for login/signup button hover state */
+#navbar #login_signup:hover {
+  padding: 0.5rem 0.9rem;
+  background-color: #17cf97;
+  font-weight: 750;
+  transition: 0.2s;
+}
+
+/* Styles for mobile view media query */
+@media screen and (max-width: 769px) {
+  #navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    top: 90px;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background: #2a3239;
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+    padding: 40px 0 0 10px;
+    transition: 0.3s ease-in-out;
+  }
+
+  /* Styles for active state of navigation bar */
+  #navbar.active {
+    right: 0px;
+  }
+
+  /* Styles for navigation bar list items in mobile view */
+  #navbar li {
+    margin-bottom: 25px;
+  }
+
+  /* Styles for mobile view icons */
+  #mobile {
+    display: block;
+  }
+
+  #mobile i {
+    font-size: 24px;
+    cursor: pointer;
+  }
+}

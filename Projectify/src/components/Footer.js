@@ -6,16 +6,16 @@ function Footer() {
   return (
     <div className="footer">
       <div className="social">
-        <a href="#">
+        <a href="a.com">
           <i class="fa-brands fa-linkedin"></i>
         </a>
-        <a href="#">
+        <a href="b.com">
           <i class="fa-brands fa-square-github"></i>
         </a>
-        <a href="#">
+        <a href=".com">
           <i class="fa-solid fa-envelope"></i>
         </a>
-        <a href="#">
+        <a href="c.com">
           <i class="fa-brands fa-discord"></i>
         </a>
       </div>

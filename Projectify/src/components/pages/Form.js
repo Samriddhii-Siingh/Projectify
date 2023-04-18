@@ -4,47 +4,51 @@ import logo from "./assets/image2.gif";
 
 function Form() {
   return (
-    <>
-      <img src={logo} alt="" />
-      <div className="login-card">
-        <form className="login-form">
-          <h1 className="login-card-title">Registration Form</h1>
-          <select className="login-drop">
-            <option>Language</option>
-            <option value="JS">JAVASCRIPT</option>
-            <option value="CSS">CSS</option>
-            <option value="PHP">PHP</option>
-            <option value="HTML">HTML</option>
-          </select>
-          <select className="login-drop">
-            <option>Mentor</option>
-            <option value="JS">JAVASCRIPT</option>
-            <option value="CSS">CSS</option>
-            <option value="PHP">PHP</option>
-            <option value="HTML">HTML</option>
-          </select>
-          <select className="login-drop">
-            <option>Domain</option>
-            <option value="JS">JAVASCRIPT</option>
-            <option value="CSS">CSS</option>
-            <option value="PHP">PHP</option>
-            <option value="HTML">HTML</option>
-          </select>
+    <div className="assign-body">
+      <div className="assign-img">
+        <img src={logo} alt="" />
+      </div>
+      <div className="assign-card">
+        <form className="assign-form">
+          <h1 className="assign-card-title">Registration Form</h1>
+          <div className="assign-dropdown">
+            <select className="assign-drop">
+              <option>Language</option>
+              <option value="JS">JAVASCRIPT</option>
+              <option value="CSS">CSS</option>
+              <option value="PHP">PHP</option>
+              <option value="HTML">HTML</option>
+            </select>
+            <select className="assign-drop">
+              <option>Mentor</option>
+              <option value="JS">JAVASCRIPT</option>
+              <option value="CSS">CSS</option>
+              <option value="PHP">PHP</option>
+              <option value="HTML">HTML</option>
+            </select>
+            <select className="assign-drop">
+              <option>Domain</option>
+              <option value="JS">JAVASCRIPT</option>
+              <option value="CSS">CSS</option>
+              <option value="PHP">PHP</option>
+              <option value="HTML">HTML</option>
+            </select>
+          </div>
           <br />
-          <input type="text" className="login-card-text" placeholder="Project" />
+          <input type="text" className="assign-card-text" placeholder="Project" />
           <br />
           <input
             type="textArea"
-            className="login-card-text"
+            className="assign-card-text"
             placeholder="Project Details"
           />
           <br />
-          <button type="submit" className="login-button">
+          <button type="submit" className="assign-button">
             Register
           </button>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 export default Form;

@@ -24,7 +24,7 @@ function Footer() {
 
       {/* Navigation links */}
       <ul className="list">
-        <CustomLink to="/home">Home</CustomLink>
+        <CustomLink to="/">Home</CustomLink>
         <CustomLink to="/services">Services</CustomLink>
         <CustomLink to="/aboutUs">About</CustomLink>
         <CustomLink to="/contactUs">Contact</CustomLink>

@@ -39,7 +39,7 @@ input {
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 40px;
-  margin-left: 41%;
+  margin-left: 5%;
 }
 .submit-button:hover {
   background-color: #da12c9;

@@ -13,8 +13,6 @@ import Services from "./components/pages/Services";
 import PrivacyPolicy from "./components/pages/PrivacyPolicy";
 import { Route, Routes } from "react-router-dom";
 
-import UserDetails from './components/pages/userDetails';
-
 export default function App() {
   const isLoggedIn = window.localStorage.getItem("loggedIn");
   return (
@@ -25,15 +23,14 @@ export default function App() {
         {/* Routes for main content */}
         <Routes>
           
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/project" element={<Project />} />
           <Route path="/form" element={<Form />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
-          <Route exact path="/" element={isLoggedIn == "true" ? <UserDetails /> : <Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route exact path="/" element={isLoggedIn == "true" ? <Dashboard /> : <Login />} />
 
-          <Route path="/userDetails" element={<UserDetails />} />
         </Routes>
       </div>
 

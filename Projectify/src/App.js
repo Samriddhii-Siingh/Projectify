@@ -18,22 +18,30 @@ import { Route, Routes } from "react-router-dom";
 export default function App() {
   return (
     <div className="App">
-      <Navbar />
+      <div className="main-header-container">
+        <Navbar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/project" element={<Project />} />
-        <Route path="/form" element={<Form />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/login" element={<Login />} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/project" element={<Project />} />
+          <Route path="/form" element={<Form />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </div>
 
-        <Route path="/services" element={<Services />} />
-        <Route path="/aboutUs" element={<AboutUs />} />
-        <Route path="/contactUs" element={<ContactUs />} />
-        <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
-      </Routes>
+      <div className="main-body-container"></div>
 
-      <Footer />
+      <div className="main-footer-container">
+        <Routes>
+          <Route path="/services" element={<Services />} />
+          <Route path="/aboutUs" element={<AboutUs />} />
+          <Route path="/contactUs" element={<ContactUs />} />
+          <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
+        </Routes>
+        
+        <Footer />
+      </div>
     </div>
   );
 }

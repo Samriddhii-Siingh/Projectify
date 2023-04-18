@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  position: relative;
+}
+
+.main-header-container {
+}
+
+.main-body-container {
+  min-height: 18vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-footer-container {
+  margin-top: auto;
+}

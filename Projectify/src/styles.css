@@ -7,8 +7,18 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  position: relative;
 }
-.App {
-  font-family: sans-serif;
-  text-align: center;
+
+.main-header-container {
+}
+
+.main-body-container {
+  min-height: 18vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-footer-container {
+  margin-top: auto;
 }

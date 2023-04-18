@@ -1,6 +1,6 @@
 
 
-.card{
+.login-card{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
     background-color: #f1f1f1;
@@ -28,7 +28,7 @@ select{
     padding-top: 20px;   
     font-size: 25px;
 }
-.drop{
+.login-drop{
     width: 100%;
     padding-top: 10px;
     padding: 12px 20px;
@@ -38,7 +38,7 @@ select{
     box-sizing: border-box;
     font-family: Georgia, serif;
 }
-.txt{
+.login-card-text{
     width: 100%;
     display: block;
     border: 1px solid #ccc;
@@ -47,9 +47,9 @@ select{
     font-family: Georgia, serif;
     margin-left: 0px;
 }
-.button{
+.login-button{
     margin-top: 20px;
-    margin-left: 40%;
+    margin-left: 5%;
     padding:10px 20px;
     border:none;
     border-radius: 5px;
@@ -59,7 +59,7 @@ select{
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.button:hover{
+.login-button:hover{
     background-color: #da12c9;
     transform: translateY(-2px);
     box-shadow: 0 8px 15px rgba(0,0,0,1);

@@ -7,6 +7,11 @@ nav {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
 }
 
+.site-title img {
+  height: 6.125rem;
+transition: all 0.3s ease-in-out;
+}
+
 #navbar {
   display: flex;
   align-items: center;

@@ -1,36 +1,36 @@
 import React from "react";
 import './Signup.css';
 import logo from './assets/image1.gif';
-function Login()
+function SignUp()
 {
     return(
 <span>
-<div className="left">
+<div className="signup-container-left">
 <img src={logo} alt="loading"/>
 </div>
-<div className="card">
+<div className="signup-card">
 <h1>Register HERE</h1>
 <form>
-    <input type="text" className="name" placeholder="First Name"></input>
-    <input type="text" className="name" placeholder="Last Name"></input>
+    <input type="text" className="signup-name" placeholder="First Name"></input>
+    <input type="text" className="signup-name" placeholder="Last Name"></input>
     <br/>
-    <input type="text" className="email" placeholder="Email"></input>
+    <input type="email" className="signup-email" placeholder="Email"></input>
     <br/>
-    <input type="text" className="reg_no" placeholder="Registration Number."></input>
+    <input type="number" className="signup-reg_no" placeholder="Registration Number."></input>
     <br/>
-    <input type="text" className="pass" placeholder="Password"></input>
-    <input type="text" className="pass" placeholder="Confirm Password"></input>
+    <input type="password" className="signup-password" placeholder="Password"></input>
+    <input type="password" className="signup-password" placeholder="Confirm Password"></input>
     <br/>
-    <div className="designation">
-    <label className="note">I'm a </label><br/>
-    <input type="Radio"  name="designation"/>
+    <div className="signup-designation-container">
+    <label className="designation-note">I'm a </label><br/>
+    <input type="Radio"  name="signup-designation"/>
     <label>Mentor</label><br/>    
-    <input type="Radio"  name="designation"/>
+    <input type="Radio"  name="signup-designation"/>
     <label>Student</label>
     </div>
     <br/>
-    <button className="submit">Submit</button>
-    <button className="clear">Clear</button>
+    <button className="signup-submit">Submit</button>
+    <button className="signup-clear">Clear</button>
     <br/>
     <br/>
     <a href="google.com">Already a Member?</a>
@@ -40,4 +40,4 @@ function Login()
 </span>
 );
 }
-export default Login;
+export default SignUp;

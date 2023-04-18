@@ -2,7 +2,7 @@
     background: #BCCCFE;
     
 }
-.card {  
+.signup-card {  
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
     background-color: #f1f1f1;
@@ -24,10 +24,10 @@ form{
     background: fixed;;
     font-family: 'Patua One',cursive;
 }
-.name{
+.signup-name{
     width: 44.8%;
 }
-.email{
+.signup-email{
     width: 95%;
 }
 input[type="text"]
@@ -40,17 +40,17 @@ input[type="text"]
     margin-left: 20px;
     background: white;
 }
-.reg_no{
+.signup-reg_no{
     width: 95%;
 }
 ::placeholder{
     font-size: 17px;
     padding-left: 10px;
 }
-.pass{
+.signup-password{
     width: 44.8%;
 }
-.submit{
+.signup-submit{
     margin-left: 90px;
     padding:10px 20px;
     border:none;
@@ -61,12 +61,12 @@ input[type="text"]
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.submit:hover{
+.signup-submit:hover{
     background-color: #da12c9;
     transform: translateY(-2px);
     box-shadow: 0 8px 15px rgba(0,0,0,1);
 }
-.clear{
+.signup-clear{
     margin-left: 120px;
     padding:10px 25px;
     border:none;
@@ -77,12 +77,12 @@ input[type="text"]
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.clear:hover{
+.signup-clear:hover{
     background-color: #da12c9;
     transform: translateY(-2px);
     box-shadow: 0 8px 15px rgba(0,0,0,1);
 }
-.designation{
+.signup-designation-container{
     margin-top: 30px;
     text-align: center;
     background: fixed;
@@ -93,7 +93,7 @@ input[type="radio"]{
     font-size: 17px;
     background: fixed;   
 }
-.note{
+.designation-note{
     background: fixed;
     font-size: 19px;
     font-weight: bold;

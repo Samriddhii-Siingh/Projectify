@@ -1,0 +1,39 @@
+
+
+.home-image-container img {
+    max-width: 50%;
+    height: auto;
+    float: left;
+}
+
+.home-text-container {
+    text-align: center;
+    float: right;
+    max-width: 44%;
+    height: auto;
+    margin: 20px;
+    margin-top: 120px;
+    padding: 10px;
+}
+
+.home-text-container h1.home-headline {
+    font-size: 45px;
+    padding: 5px;
+    font-family: sans-serif;
+}
+
+.home-image-container p {
+    padding: 10px;
+}
+
+.home-text-container p.home-text-1 {
+    font-size: 25px;
+    padding-top: 20px;
+    line-height: 45px;
+}
+
+.home-text-container p.home-text-2 {
+    font-size: 25px;
+    padding-bottom: 20px;
+    line-height: 45px;
+}

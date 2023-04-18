@@ -1,0 +1,30 @@
+/* Reset the margin, padding, and box-sizing for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set the font family, text alignment, and position for the App container */
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  position: relative;
+}
+
+/* Empty selector for the main header container */
+.main-header-container {
+  /* Styles for the main header container go here */
+}
+
+/* Set minimum height and flex direction for the main body container */
+.main-body-container {
+  min-height: 18vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Set margin top to auto for the main footer container */
+.main-footer-container {
+  margin-top: auto;
+}

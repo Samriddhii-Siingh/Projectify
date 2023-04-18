@@ -1,0 +1,192 @@
+/* PROFILE */
+
+.dashboard-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  background-color: #f1f1f1;
+  width: 300px;
+  margin: 20px;
+  float: left;
+  }
+  
+  .dashboard-image-container img {
+  display: block;
+  border-radius: 50%;
+  width: 50%;
+  margin: 0 auto;
+  transition: all 0.3s ease-in-out;
+  }
+  
+  .dashboard-image-container img:hover {
+  transform: scale(1.1);
+  }
+  
+  .dashboard-mid-container-1 {
+  text-align: center;
+  margin: 20px 0;
+  }
+  
+  .dashboard-mid-container-1 hr {
+  margin: 0 auto;
+  width: 75%;
+  border: 1px solid #ccc;
+  }
+  
+  .dashboard-mid-container-1 h1 {
+  font-size: 30px;
+  margin: 10px 0;
+  }
+  
+  .dashboard-mid-container-1 h4 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #555;
+  margin: 0;
+  }
+  
+  .dashboard-mid-container-1 p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #777;
+  margin: 20px 0;
+  }
+  
+  .dashboard-mid-container-2 {
+  text-align: center;
+  }
+  
+  .dashboard-mid-container-2 h3 {
+  font-size: 20px;
+  margin: 20px 0;
+  }
+  
+  .dashboard-lower-container {
+  margin-top: 20px;
+  }
+  
+  .dashboard-social-handle {
+  margin: 10px;
+  padding: 10px;
+  font-size: 18px;
+  }
+  
+  .dashboard-social-handle a {
+  text-decoration: none;
+  }
+  
+  .dashboard-social-handle a i {
+  padding: 8px;
+  }
+  
+  /* MEDIA QUERIES */
+  
+  @media screen and (max-width: 768px) {
+  .dashboard-card {
+  width: 100%;
+  }
+  }
+
+/* PROJECT STATUS */
+
+.dashboard-project-status {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #f1f1f1;
+  float: left;
+  width: 50%;
+  padding: 5px;
+  margin: 20px;
+}
+
+.dashboard-project-container {
+  display: flex;
+}
+
+.dashboard-project-detail {
+  background-color: #f1f1f1;
+  border: 1px dashed black;
+  padding: 10px;
+  margin: 10px;
+  width: 350px;
+}
+
+.dashboard-project-detail h2 {
+  font-size: 24px;
+}
+
+/* NOTIFICATION */
+/* NOTIFICATION */
+
+.dashboard-notifi-box {
+  background-color: #f1f1f1;
+  width: 300px;
+  height: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  float: right;
+  margin: 20px;
+  overflow-y: auto; /* Add scrollbar when content exceeds the height */
+}
+
+.dashboard-notifi-box h2 {
+  font-size: 18px;
+  padding: 8px;
+  border-bottom: 1px solid #ccc; /* Change border color */
+  color: #555; /* Change font color */
+}
+
+.dashboard-notifi-box h2 span {
+  color: #f00;
+}
+
+.dashboard-notifi-item {
+  display: flex;
+  border-bottom: 1px solid #ccc; /* Change border color */
+  margin-bottom: 20px;
+  cursor: pointer;
+  padding: 10px; /* Increase padding */
+}
+
+.dashboard-notifi-item:hover {
+  background-color: #eee;
+}
+
+.dashboard-notifi-item .dashboard-notifi-text h4 {
+  color: #555; /* Change font color */
+  font-size: 16px;
+  margin-top: 1px;
+  margin-left: 20px;
+}
+
+.dashboard-notifi-item .dashboard-notifi-text p {
+  color: #999; /* Change font color */
+  font-size: 12px;
+  margin-left: 20px;
+  margin-top: 4px;
+}
+
+
+/* REQUEST */
+
+.dashboard-request-container {
+  padding: 5px;
+  float: right;
+  clear: right;
+  width: 200px;
+  margin: 20px;
+}
+
+.dashboard-request-meet {
+  background-color: black;
+  padding: 3px;
+  border-radius: 30px;
+}
+
+.dashboard-request-meet li {
+  list-style: none;
+}
+
+.dashboard-request-container li a {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+}

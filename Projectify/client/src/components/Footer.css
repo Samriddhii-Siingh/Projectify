@@ -1,0 +1,78 @@
+/* Define styles for the footer container */
+.footer {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 400;
+  padding: 20px;
+  background-color: #1b2430;
+  position: static;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30%; /* Set a top margin for the footer */
+  bottom: 0;
+  width: 100%;
+}
+
+/* Define styles for the social icons container */
+.footer .social {
+  text-align: center;
+  padding-bottom: 25px;
+  color: #fff;
+}
+
+/* Define styles for the social icons */
+.footer .social a {
+  font-size: 24px;
+  color: inherit;
+  border: 1px solid #fff;
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 8px;
+  opacity: 0.75;
+}
+
+/* Define styles for the social icons when hovered */
+.footer .social a:hover {
+  opacity: 0.9;
+}
+
+/* Define styles for the unordered list */
+.footer ul {
+  margin-top: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+/* Define styles for the links in the unordered list */
+.footer ul a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+  color: #fff;
+}
+
+/* Define styles for the list items in the unordered list */
+.footer ul li {
+  display: inline-block;
+  padding: 0 15px;
+}
+
+/* Define styles for the links in the list items when hovered */
+.footer ul li a:hover {
+  opacity: 1;
+}
+
+/* Define styles for the copyright text */
+.footer .copyright {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+}

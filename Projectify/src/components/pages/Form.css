@@ -1,6 +1,6 @@
 
 
-.login-card{
+.assign-card{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
     background-color: #f1f1f1;
@@ -12,23 +12,20 @@
     margin-right: 100px;
     position: relative;
 }
-img{
+.assign-img{
     float: left;
     
     position: relative;
 }
-h1{
+.assign-card-title{
     
     text-align: center;
 }
-select{
+.assign-drop{
     margin-top: 30px;
 }
-.header{
-    padding-top: 20px;   
-    font-size: 25px;
-}
-.login-drop{
+
+.assign-drop{
     width: 100%;
     padding-top: 10px;
     padding: 12px 20px;
@@ -38,7 +35,7 @@ select{
     box-sizing: border-box;
     font-family: Georgia, serif;
 }
-.login-card-text{
+.assign-card-text{
     width: 100%;
     display: block;
     border: 1px solid #ccc;
@@ -47,7 +44,7 @@ select{
     font-family: Georgia, serif;
     margin-left: 0px;
 }
-.login-button{
+.assign-button{
     margin-top: 20px;
     margin-left: 5%;
     padding:10px 20px;
@@ -59,7 +56,7 @@ select{
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.login-button:hover{
+.assign-button:hover{
     background-color: #da12c9;
     transform: translateY(-2px);
     box-shadow: 0 8px 15px rgba(0,0,0,1);

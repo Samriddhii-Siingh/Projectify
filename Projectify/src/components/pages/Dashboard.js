@@ -109,7 +109,7 @@ function Dashboard() {
         <div className="dashboard-request-meet">
           <ul>
             <li>
-              <a href="#">Request a meet</a>
+              <a href="#/">Request a meet</a>
             </li>
           </ul>
         </div>

@@ -1,4 +1,4 @@
-*{
+.signup-body{
     background: #BCCCFE;
     
 }
@@ -14,12 +14,12 @@
     background:linear-gradient(to right, #BCCCFE,#5F6BDD);
     float: right;
 }
-h1{
+.signup-header{
     text-align: center;
     background: fixed;;
     font-family: 'Patua One',cursive;
 }
-form{
+.signup-form{
     padding: 15px;
     background: fixed;;
     font-family: 'Patua One',cursive;
@@ -93,7 +93,7 @@ input[type="radio"]{
     font-size: 17px;
     background: fixed;   
 }
-.designation-note{
+.signup-designation-note{
     background: fixed;
     font-size: 19px;
     font-weight: bold;
@@ -102,14 +102,14 @@ input[type="radio"]{
 label{
     background: fixed;
 }
-img{
+.signup-img{
     margin-top: 80px;
     margin-left: 50px;
     width: 800px;
     float: left;
     border-radius: 10px;
 }
-a{
+.signup-anchor{
      margin-left: 35%;
      background: fixed;
      

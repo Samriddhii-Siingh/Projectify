@@ -1,94 +1,82 @@
-
-.Upload-card{
+.upload-card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
     padding-bottom: 35px;
     background-color: #f1f1f1;
-    width: 500px;  
+    width: 500px;
     margin-top: 80px;
     border-radius: 10px;
-    background:linear-gradient(to right,#19C3D4,#E2E7EB);
+    background: linear-gradient(to right, #19c3d4, #e2e7eb);
     float: right;
     margin-right: 100px;
     position: relative;
-    
-}
-.Upload-img{
+    height: 600px; /* added height property */
+  }
+  
+  .upload-img {
     margin-top: 80px;
     margin-left: 100px;
     width: 600px;
     float: left;
-}
-input[type="textArea"]
-{
+  }
+  
+  
+  input[type="textArea"] {
     height: 100px;
     padding-top: 0px;
-}
-input
-{
+  }
+  
+  input {
     margin-top: 20px;
     height: 40px;
     border: none;
     border-radius: 10px;
-    font-family: 'Patua One',cursive;
+    font-family: 'Patua One', cursive;
     margin-left: 20px;
     background: white;
-}
-::placeholder{
-    padding-left:10px ;
+    padding-left: 10px;
     font-size: 16px;
-}
-.Upload-header{
+  }
+  
+  .upload-header {
     text-align: center;
-    font-family: 'Patua One',cursive;
-}
-.Upload-mentor{
+    font-family: 'Patua One', cursive;
+  }
+  
+  .upload-mentor,
+  .upload-project,
+  .upload-domain,
+  .upload-lang {
     width: 215px;
-}
-.Upload-project{
-    width: 215px;
-}
-.Upload-domain{
-    width: 215px ;
-}  
-.Upload-lang{
-    width: 215px;
-}
-.Upload-require{
+  }
+  
+  .upload-require,
+  .upload-desc {
     width: 91%;
-}
-.Upload-desc{
-    width: 91%;
-}
-.Upload-submit{
-    margin-left: 90px;
-    padding:10px 20px;
-    border:none;
+  }
+  
+  .upload-btns {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    }
+    
+    .upload-submit,
+    .upload-clear {
+    padding: 10px 20px;
+    border: none;
     border-radius: 5px;
     background-color: #da12c9;
     color: white;
     font-size: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
-}
-.Upload-submit:hover{
+    margin: 0 10px;
+    }
+    
+    .upload-submit:hover,
+    .upload-clear:hover {
     background-color: #da12c9;
     transform: translateY(-2px);
-    box-shadow: 0 8px 15px rgba(0,0,0,1);
-}
-.Upload-clear{
-    margin-left: 120px;
-    padding:10px 25px;
-    border:none;
-    border-radius: 5px;
-    background-color: #da12c9;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.Upload-clear:hover{
-    background-color: #da12c9;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 15px rgba(0,0,0,1);
-}
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 1);
+    }

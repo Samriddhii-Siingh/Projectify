@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import "./Form.css";
 import logo from "./assets/image2.gif";
 
 function Form() {
+
+  const [languages, setLanguages] = useState([]);
+  const [mentors, setMentors] = useState([]);
+  const [domains, setDomains] = useState([]);
+
+  useEffect(() => {
+    fetch('/projects/dropdown/Language')
+      .then(res => res.json())
+      .then(data => setLanguages(data));
+
+    fetch('/projects/dropdown/Mentor')
+      .then(res => res.json())
+      .then(data => setMentors(data));
+
+    fetch('/projects/dropdown/Domain')
+      .then(res => res.json())
+      .then(data => setDomains(data));
+  }, []);
+
+
   return (
     <div className="assign-body">
       <div className="assign-img">

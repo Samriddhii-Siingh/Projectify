@@ -62,9 +62,10 @@ export default class Navbar extends Component {
           >
             <CustomLink to="/">Home</CustomLink>
             <CustomLink to="/project">Projects</CustomLink>
-            {localStorage.getItem("token") ? (
+            {window.localStorage.getItem("token") ? (
               <div className="navdash">
-                  <CustomLink to="/Upload" className="">Form</CustomLink>
+                <CustomLink to={this.state.userData.designation === "student" ? "/Form" : "/Upload"} className="">Form</CustomLink>
+
                 <CustomLink to="/dashboard" className="">Dashboard</CustomLink>
                 <CustomLink to="/logout" id="login_signup" onClick={this.logOut}>
                   LogOut

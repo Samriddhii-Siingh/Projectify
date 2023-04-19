@@ -1,131 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Project_Mentor.css";
-function Project() {
+
+const Project = () => {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/projects")
+      .then((res) => res.json())
+      .then((data) => setProjects(data))
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
     <div className="project-body-container">
-
-      <div className="project-card">
-        <h3 className="project-card-title">Project 1 Name</h3>
-        <span className="project-card-id">Project Id</span>
-        <div className="project-card-mentor">Mentor Name</div>
-        <div className="project-card-domain">Domain Name</div>
-        <hr />
-        <div className="project-card-desc">
-          this is a project 1 and it will be displayed like this as must as i
-          want
+      {projects.map((project) => (
+        <div className="project-card" key={project._id}>
+          <h3 className="project-card-title">{project.project_name}</h3>
+          <span className="project-card-id">Project Id: {project.project_id}</span>
+          <div className="project-card-mentor">
+            {project.mentor_name}
+          </div>
+          <div className="project-card-domain">
+            Domain: {project.domain}
+          </div>
+          <hr />
+          <div className="project-card-desc">{project.project_description}</div>
         </div>
-      </div>
-
-      <div className="project-card">
-        <h3 className="project-card-title">Project 1 Name</h3>
-        <span className="project-card-id">Project Id</span>
-        <div className="project-card-mentor">Mentor Name</div>
-        <div className="project-card-domain">Domain Name</div>
-        <hr />
-        <div className="project-card-desc">
-          this is a project 1 and it will be displayed like this as must as i
-          want
-        </div>
-      </div>
-
-
-      <div className="project-card">
-        <h3 className="project-card-title">Project 1 Name</h3>
-        <span className="project-card-id">Project Id</span>
-        <div className="project-card-mentor">Mentor Name</div>
-        <div className="project-card-domain">Domain Name</div>
-        <hr />
-        <div className="project-card-desc">
-          this is a project 1 and it will be displayed like this as must as i
-          want
-        </div>
-      </div>
-
-      <div className="project-card">
-        <h3 className="project-card-title">Project 1 Name</h3>
-        <span className="project-card-id">Project Id</span>
-        <div className="project-card-mentor">Mentor Name</div>
-        <div className="project-card-domain">Domain Name</div>
-        <hr />
-        <div className="project-card-desc">
-          this is a project 1 and it will be displayed like this as must as i
-          want
-        </div>
-      </div>
-
-      <div className="project-card">
-        <h3 className="project-card-title">Project 1 Name</h3>
-        <span className="project-card-id">Project Id</span>
-        <div className="project-card-mentor">Mentor Name</div>
-        <div className="project-card-domain">Domain Name</div>
-        <hr />
-        <div className="project-card-desc">
-          this is a project 1 and it will be displayed like this as must as i
-          want
-        </div>
-      </div>
-
-      <div className="project-card">
-        <h3 className="project-card-title">Project 1 Name</h3>
-        <span className="project-card-id">Project Id</span>
-        <div className="project-card-mentor">Mentor Name</div>
-        <div className="project-card-domain">Domain Name</div>
-        <hr />
-        <div className="project-card-desc">
-          this is a project 1 and it will be displayed like this as must as i
-          want
-        </div>
-      </div>
-
-      <div className="project-card">
-        <h3 className="project-card-title">Project 1 Name</h3>
-        <span className="project-card-id">Project Id</span>
-        <div className="project-card-mentor">Mentor Name</div>
-        <div className="project-card-domain">Domain Name</div>
-        <hr />
-        <div className="project-card-desc">
-          this is a project 1 and it will be displayed like this as must as i
-          want
-        </div>
-      </div>
-
-      <div className="project-card">
-        <h3 className="project-card-title">Project 1 Name</h3>
-        <span className="project-card-id">Project Id</span>
-        <div className="project-card-mentor">Mentor Name</div>
-        <div className="project-card-domain">Domain Name</div>
-        <hr />
-        <div className="project-card-desc">
-          this is a project 1 and it will be displayed like this as must as i
-          want
-        </div>
-      </div>
-
-      <div className="project-card">
-        <h3 className="project-card-title">Project 1 Name</h3>
-        <span className="project-card-id">Project Id</span>
-        <div className="project-card-mentor">Mentor Name</div>
-        <div className="project-card-domain">Domain Name</div>
-        <hr />
-        <div className="project-card-desc">
-          this is a project 1 and it will be displayed like this as must as i
-          want
-        </div>
-      </div>
-
-      <div className="project-card">
-        <h3 className="project-card-title">Project 1 Name</h3>
-        <span className="project-card-id">Project Id</span>
-        <div className="project-card-mentor">Mentor Name</div>
-        <div className="project-card-domain">Domain Name</div>
-        <hr />
-        <div className="project-card-desc">
-          this is a project 1 and it will be displayed like this as must as i
-          want
-        </div>
-      </div>
-      
+      ))}
     </div>
   );
-}
+};
+
 export default Project;

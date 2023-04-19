@@ -27,7 +27,9 @@ export default class Navbar extends Component {
     })
       .then((res) => res.json())
       .then((data) => {
+        const { email, password, designation } = data;
         console.log(data, "userData");
+        console.log(this.state.userData.designation);
         this.setState({ userData: data.data });
         if (data.data === "token expired") {
           alert("Token expired login again");
@@ -61,9 +63,9 @@ export default class Navbar extends Component {
             <CustomLink to="/">Home</CustomLink>
             <CustomLink to="/project">Projects</CustomLink>
             {localStorage.getItem("token") ? (
-              <div>
-                <CustomLink to="/form">Form</CustomLink>
-                <CustomLink to="/dashboard">Dashboard</CustomLink>
+              <div className="navdash">
+                  <CustomLink to="/Upload" className="">Form</CustomLink>
+                <CustomLink to="/dashboard" className="">Dashboard</CustomLink>
                 <CustomLink to="/logout" id="login_signup" onClick={this.logOut}>
                   LogOut
                 </CustomLink>

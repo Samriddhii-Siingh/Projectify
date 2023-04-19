@@ -6,7 +6,7 @@
   background-color: #f1f1f1;
   width: 500px;  
   margin-top: 80px;
-  border-radius: 10px;
+  border-radius: 15px;
   background:linear-gradient(to left, #BCCCFE,#E2E7EB);
   float: right;
   margin-right: 100px;
@@ -42,7 +42,16 @@
   box-sizing: border-box;
   font-family: Georgia, serif;
   padding: 12px 20px;
+  margin-bottom: 10px;
+}
+
+.assign-project{
+  width:100%;
+  padding: 12px 20px;
   margin-bottom: 20px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 

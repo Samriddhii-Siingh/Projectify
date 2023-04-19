@@ -14,6 +14,7 @@ class SignUp extends React.Component {
       email: "",
       reg_no: "",
       password: "",
+      designation: ""
     };
 
     // bind the handleSubmit method to this component

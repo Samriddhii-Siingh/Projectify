@@ -6,7 +6,8 @@ const StudentSchema = new mongoose.Schema (
         last_name: String,
         email: { type: String, unique: true, required: true },
         reg_no: {type: Number, unique: true, required: true },
-        password: String
+        password: String,
+        designation: String,
     },
     {
         collection: "student_data"
@@ -20,7 +21,8 @@ const MentorSchema = new mongoose.Schema (
         last_name: String,
         email: { type: String, unique: true, required: true },
         reg_no: {type: Number, unique: true, required: true },
-        password: String
+        password: String,
+        designation: String,
     },
     {
         collection: "mentor_data"

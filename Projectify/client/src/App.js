@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Home from "./components/pages/Home";
 import Project from "./components/pages/Project";
 import Form from "./components/pages/Form";
+import Upload from "./components/pages/Upload";
 import Dashboard from "./components/pages/Dashboard";
 import Login from "./components/pages/Login";
 import Signup from "./components/pages/SignUp";
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/project" element={<Project />} />
           <Route path="/form" element={<Form />} />
+          <Route path="/Upload" element={<Upload/>}/>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />

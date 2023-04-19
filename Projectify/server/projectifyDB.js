@@ -7,7 +7,7 @@ const StudentSchema = new mongoose.Schema (
         email: { type: String, unique: true, required: true },
         reg_no: {type: Number, unique: true, required: true },
         password: String,
-        designation: String,
+        designation: String 
     },
     {
         collection: "student_data"
@@ -22,7 +22,7 @@ const MentorSchema = new mongoose.Schema (
         email: { type: String, unique: true, required: true },
         reg_no: {type: Number, unique: true, required: true },
         password: String,
-        designation: String,
+        designation: String
     },
     {
         collection: "mentor_data"
@@ -34,16 +34,17 @@ mongoose.model("mentor_data", MentorSchema);
 
 const ProjectSchema = new mongoose.Schema (
     {
+        mentor_name: String,
+        mentor_id:Number,
+        project_name: String,
+        project_id:String,
+        project_description: String,
         lang: String,
-        mentor_reg_no: Number,
-        domain: String,
-        p_name: String,
-        p_description: String,
-        student_reg_no: Number,
+        domain: String,  
+        
     },
     {
         collection: "project_data"
     }
 );
-
 mongoose.model("project_data", ProjectSchema);

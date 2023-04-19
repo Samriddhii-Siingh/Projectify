@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect} from "react";
 import "./Login.css";
 import logo from "./assets/login2.gif";
 import { Link } from "react-router-dom";
@@ -44,8 +44,10 @@ class Login extends Component {
         }
       });
   }
+  
 
   render() {
+    
     return (
       <>
         <div className="login-img">

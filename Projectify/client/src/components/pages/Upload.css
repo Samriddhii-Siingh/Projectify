@@ -1,0 +1,94 @@
+
+.Upload-card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    padding-bottom: 35px;
+    background-color: #f1f1f1;
+    width: 500px;  
+    margin-top: 80px;
+    border-radius: 10px;
+    background:linear-gradient(to right,#19C3D4,#E2E7EB);
+    float: right;
+    margin-right: 100px;
+    position: relative;
+    
+}
+.Upload-img{
+    margin-top: 80px;
+    margin-left: 100px;
+    width: 600px;
+    float: left;
+}
+input[type="textArea"]
+{
+    height: 100px;
+    padding-top: 0px;
+}
+input
+{
+    margin-top: 20px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Patua One',cursive;
+    margin-left: 20px;
+    background: white;
+}
+::placeholder{
+    padding-left:10px ;
+    font-size: 16px;
+}
+.Upload-header{
+    text-align: center;
+    font-family: 'Patua One',cursive;
+}
+.Upload-mentor{
+    width: 215px;
+}
+.Upload-project{
+    width: 215px;
+}
+.Upload-domain{
+    width: 215px ;
+}  
+.Upload-lang{
+    width: 215px;
+}
+.Upload-require{
+    width: 91%;
+}
+.Upload-desc{
+    width: 91%;
+}
+.Upload-submit{
+    margin-left: 90px;
+    padding:10px 20px;
+    border:none;
+    border-radius: 5px;
+    background-color: #da12c9;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.Upload-submit:hover{
+    background-color: #da12c9;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0,0,0,1);
+}
+.Upload-clear{
+    margin-left: 120px;
+    padding:10px 25px;
+    border:none;
+    border-radius: 5px;
+    background-color: #da12c9;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.Upload-clear:hover{
+    background-color: #da12c9;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0,0,0,1);
+}

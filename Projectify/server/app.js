@@ -25,15 +25,13 @@ mongoose
 require("./projectifyDB");
 
 const Student = mongoose.model("student_data");
-
-
 const Mentor = mongoose.model("mentor_data");
-
+const Project = mongoose.model("project_data");
 app.post("/signup", async(req, res) => {
-    const { first_name, last_name, email, reg_no, password, designation} = req.body;
+    const { first_name, last_name, email, reg_no, password,designation} = req.body;
 
     const encryptedPassword = await bcrypt.hash(password, 10);
-    if(designation === "student"){
+    if(designation=="student"){
     try {
         const oldUser = await Student.findOne({ email });
 
@@ -46,13 +44,13 @@ app.post("/signup", async(req, res) => {
             email,
             reg_no,
             password: encryptedPassword,
-            designation,
+            designation
         });
         res.send({status : "ok"});
     } catch (error) {
         res.send({ status: "error"})
     }}
-    else if(designation === "mentor")
+    else if(designation=="mentor")
     {
         try {
             const oldUser = await Mentor.findOne({ email });
@@ -66,7 +64,7 @@ app.post("/signup", async(req, res) => {
                 email,
                 reg_no,
                 password: encryptedPassword,
-                designation,
+                designation
             });
             res.send({status : "ok"});
         } catch (error) {
@@ -76,16 +74,15 @@ app.post("/signup", async(req, res) => {
 });
 
 app.post("/login", async(req,res) => {
-    const { email, password, designation } = req.body;
-    if(designation === "student") {
+    const { email, password,designation } = req.body;
+    if(designation === "student")
+    {
     const user = await Student.findOne({ email });
-
     if(!user) {
         return res.json({ error: "User not found" });
     }
     if(await bcrypt.compare(password, user.password)) {
-        const token = jwt.sign({ email: user.email, designation: user.designation }, JWT_SECRET);
-
+        const token = jwt.sign({ email: user.email,designation:user.designation}, JWT_SECRET);
 
         if(res.status(201)) {
             return res.json({ status: "ok", data: token});
@@ -120,9 +117,8 @@ app.post("/userData", async (req,res) => {
         const user = jwt.verify(token, JWT_SECRET);
 
         const usermail = user.email;
-        const designation = user.designation;
-
-        if(designation == "student") {
+        const designation=user.designation;
+        if(designation === "student") {
             Student.findOne({ email: usermail })
                 .then((data) => {
                     res.send({ status: "ok", data: data});
@@ -130,7 +126,7 @@ app.post("/userData", async (req,res) => {
                 .catch((error) => {
                     res.send({ status: "error", data: error})
                 })
-        } else if (designation == "mentor") {
+        } else if (designation === "mentor") {
             Mentor.findOne({ email: usermail })
                 .then((data) => {
                     res.send({ status: "ok", data: data});
@@ -140,11 +136,32 @@ app.post("/userData", async (req,res) => {
                 })
         }
     } catch (error) {
-        res.send({ status: "error", data: error})
+        
     }
 });
 
-
+app.post("/Upload", async(req,res)=>{
+const { mentor_name,mentor_id, project_name,project_id, project_description,tech_used, domain} = req.body;
+try {
+    const oldId=await Project.findOne({project_id});
+    if(oldId)
+    {
+        return res.send({error:"Project with is id Already Exist"});
+    }
+    await Project.create({
+        mentor_name,
+        mentor_id,
+        project_name,
+        project_id, 
+        project_description,
+        tech_used, 
+        domain
+    });
+    res.send({status:"ok"});
+} catch (error) {
+    res.send({status:"error"});
+}
+});
 
 app.listen(5000, () => {
     console.log("Server started");

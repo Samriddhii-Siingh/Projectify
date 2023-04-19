@@ -1,6 +1,7 @@
 import React from "react";
 import "./Signup.css";
 import logo from "./assets/image1.gif";
+import { Link } from "react-router-dom";
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -22,8 +23,8 @@ class SignUp extends React.Component {
   handleSubmit(e) {
     // handle form submission
     e.preventDefault();
-    const { first_name, last_name, email, reg_no, password } = this.state;
-    console.log(first_name, last_name, email, reg_no, password );
+    const { first_name, last_name, email, reg_no, password, designation} = this.state;
+    console.log(first_name, last_name, email, reg_no, password, designation );
     fetch("http://localhost:5000/signup", {
       method: 'POST',
       crossDomain: true,
@@ -37,18 +38,24 @@ class SignUp extends React.Component {
         last_name,
         email,
         reg_no,
-        password
+        password,
+        designation,
       }),
     })
     .then((res) => res.json())
     .then((data) => {
       console.log(data, "SignUp successful");
+      if(data.status == "ok") {
+        alert("Signup successful");
+
+        window.location.href = "./login";
+      }
     })
   }
 
   render() {
     return (
-      <span className="signup-body" onSubmit={this.handleSubmit}>
+      <div className="signup-state" onSubmit={this.handleSubmit}>
         <div className="signup-container-left">
           <div className="signup-img">
             <img src={logo} alt="loading" />
@@ -61,61 +68,127 @@ class SignUp extends React.Component {
               type="text"
               className="signup-name"
               placeholder="First Name"
-              onChange={e => this.setState({first_name: e.target.value})}
-            ></input>
+              onChange={e => {
+                const re = /^[A-Za-z]{2,}$/;
+                if (re.test(e.target.value)) {
+                  this.setState({ first_name: e.target.value });
+                } else {
+                  // alert("Please enter a valid first name.");
+                }
+              }}
+              required
+            />
+
             <input
               type="text"
               className="signup-name"
               placeholder="Last Name"
-              onChange={e => this.setState({last_name: e.target.value})}
-            ></input>
+              onChange={e => {
+                const re = /^[A-Za-z]{2,}$/;
+                if (re.test(e.target.value)) {
+                  this.setState({ last_name: e.target.value });
+                } else {
+                  // alert("Please enter a valid last name.");
+                }
+              }}
+              required
+            />
+
+
             <br />
             <input
               type="email"
               className="signup-email"
               placeholder="Email"
-              onChange={e => this.setState({email: e.target.value})}
-            ></input>
+              onChange={e => {
+                const re = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+                if (re.test(e.target.value)) {
+                  this.setState({ email: e.target.value });
+                } else {
+                  // alert("Please enter a valid email address.");
+                }
+              }}
+              required
+            />
+
+
             <br />
             <input
-              type="number"
+              type="text"
               className="signup-reg_no"
               placeholder="Registration Number"
-              onChange={e => this.setState({reg_no: e.target.value})}
-            ></input>
+              onChange={e => {
+                const re = /^\d{9}$/;
+                if (re.test(e.target.value)) {
+                  this.setState({ reg_no: e.target.value });
+                }
+              }}
+              required
+              onInvalid={(e) => {
+                e.target.setCustomValidity("Registration Number must be a 9-digit number");
+                alert("Registration Number must be a 9-digit number");
+              }}
+              onInput={(e) => e.target.setCustomValidity("")}
+            />
+
             <br />
             <input
               type="password"
               className="signup-password"
               placeholder="Password"
               onChange={e => this.setState({password: e.target.value})}
-            ></input>
+              required
+              minLength={8}
+            />
+
             <input
               type="password"
               className="signup-password"
               placeholder="Confirm Password"
-            ></input>
+              onBlur={e => {
+                if (e.target.value !== this.state.password) {
+                  alert("Passwords do not match");
+                }
+              }}
+              required
+              minLength={8}
+            />
+
             <br />
             <div className="signup-designation-container">
               <label className="signup-designation-note">I'm a </label>
               <br />
-              <input type="Radio" name="signup-designation" />
+              <input
+                type="Radio"
+                name="signup-designation"
+                value="mentor"
+                onChange={e => this.setState({designation: e.target.value})}
+                required
+              />
               <label>Mentor</label>
               <br />
-              <input type="Radio" name="signup-designation" />
+              <input
+                type="Radio"
+                name="signup-designation"
+                value="student"
+                onChange={e => this.setState({designation: e.target.value})}
+                required
+              />
               <label>Student</label>
             </div>
+
             <br />
-            <button className="signup-submit">Submit</button>
-            <button className="signup-clear">Clear</button>
+            <button type="submit" className="signup-submit">Submit</button>
+            <button type="reset" className="signup-clear">Clear</button>
+
             <br />
             <br />
             <div className="signup-anchor">
-              <a href="google.com">Already a Member?</a>
+              <Link to="/Login">Already a Member?</Link>
             </div>
           </form>
         </div>
-      </span>
+      </div>
     );
   }
 }

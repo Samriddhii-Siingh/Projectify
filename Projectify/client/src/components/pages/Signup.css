@@ -1,14 +1,14 @@
-.signup-body{
+.signup-state{
     background: #BCCCFE;
-    
+    background: local;    
 }
 .signup-card {  
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
     background-color: #f1f1f1;
     width: 500px;  
-    height: 565px;
-    margin-top: 80px;
+    height: 600px;
+    margin-top: 60px;
     margin-right: 100px;
     border-radius: 10px;
     background:linear-gradient(to right, #BCCCFE,#5F6BDD);
@@ -51,7 +51,7 @@ input[type="text"]
     width: 44.8%;
 }
 .signup-submit{
-    margin-left: 90px;
+    margin-left: 30px;
     padding:10px 20px;
     border:none;
     border-radius: 5px;
@@ -90,10 +90,20 @@ input[type="text"]
 input[type="radio"]{
     margin-top: 10px;
     text-align: center;
-    font-size: 17px;
-    background: fixed;   
+    background: fixed;
+    size: 5px;   
 }
-.signup-designation-note{
+input[type="number"] {
+    width: 95%;
+    margin-top: 20px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    font-family: "Patua One", cursive;
+    margin-left: 10px;
+    background: white;
+  }
+  .signup-designation-note{
     background: fixed;
     font-size: 19px;
     font-weight: bold;
@@ -103,14 +113,12 @@ label{
     background: fixed;
 }
 .signup-img{
-    margin-top: 80px;
+    margin-top: 60px;
     margin-left: 50px;
     width: 800px;
     float: left;
     border-radius: 10px;
 }
 .signup-anchor{
-     margin-left: 35%;
      background: fixed;
-     
 }

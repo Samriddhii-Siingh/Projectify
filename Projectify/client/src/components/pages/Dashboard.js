@@ -35,11 +35,6 @@ export default class Dashboard extends Component {
     });
     }
 
-    logOut = () => {
-      window.localStorage.clear();
-      window.location.href="./login";
-    }
-
     render() {
       return (
         <div className="dashboard-container">
@@ -149,7 +144,6 @@ export default class Dashboard extends Component {
               </li>
             </ul>
           </div>
-          <button onClick={this.logOut} className='btn btn-primary'>Log Out</button>
         </div>
       </div>
       )

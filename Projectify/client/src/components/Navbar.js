@@ -1,51 +1,91 @@
-import { Component } from "react";
-import "./NavbarStyles.css";
-import icon from './pages/assets/logo.png';
-
+import React, { useState, Component } from "react";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import "./NavbarStyles.css";
+import icon from "./pages/assets/logo.png";
 
-class Navbar extends Component {
-  state = { clicked: false };
+export default class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      clicked: false,
+      userData: "",
+    };
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:5000/userData", {
+      method: "POST",
+      crossDomain: true,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({
+        token: window.localStorage.getItem("token"),
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data, "userData");
+        this.setState({ userData: data.data });
+        if (data.data === "token expired") {
+          alert("Token expired login again");
+
+          window.localStorage.clear();
+          window.location.href = "./login";
+        }
+      });
+  }
+
   handleClick = () => {
-    this.setState({ clicked: !this.state.clicked });
+    this.setState((prevState) => ({ clicked: !prevState.clicked }));
   };
+
+  logOut = () => {
+    window.localStorage.clear();
+    window.location.href = "./login";
+  };
+
   render() {
     return (
-      <>
-        <nav>
-          <Link to="/home" className="site-title">
-            <img src={icon} alt="logo" />
-          </Link>
-          <div>
-            <ul
-              id="navbar"
-              className={this.state.clicked ? "navbar active" : "navbar"}
-            >
-              <CustomLink to="/home">Home</CustomLink>
-              <CustomLink to="/project">Projects</CustomLink>
-              <CustomLink to="/form">Form</CustomLink>
-              <CustomLink to="/dashboard">Dashboard</CustomLink>
-              <CustomLink to="/login" id="login_signup">
+      <nav>
+        <Link to="/" className="site-title">
+          <img src={icon} alt="logo" />
+        </Link>
+        <div>
+          <ul
+            id="navbar"
+            className={this.state.clicked ? "navbar active" : "navbar"}
+          >
+            <CustomLink to="/">Home</CustomLink>
+            <CustomLink to="/project">Projects</CustomLink>
+            {localStorage.getItem("token") ? (
+              <div className="navdash">
+                <CustomLink to="/form" className="">Form</CustomLink>
+                <CustomLink to="/dashboard" className="">Dashboard</CustomLink>
+                <CustomLink to="/logout" id="login_signup" onClick={this.logOut}>
+                  LogOut
+                </CustomLink>
+              </div>
+            ) : (
+              <Link to="/login" id="login_signup">
                 Login
-              </CustomLink>
-            </ul>
-          </div>
-
-          <div id="mobile" onClick={this.handleClick}>
-            <i
-              id="bar"
-              className={
-                this.state.clicked ? "fa-solid fa-times" : "fa-solid fa-bars"
-              }
-            ></i>
-          </div>
-        </nav>
-      </>
+              </Link>
+            )}
+          </ul>
+        </div>
+        <div id="mobile" onClick={this.handleClick}>
+          <i
+            className={this.state.clicked ? "fa-solid fa-times" : "fa-solid fa-bars"}
+          ></i>
+        </div>
+      </nav>
     );
   }
 }
 
-function CustomLink({ to, children, ...props }) {
+export function CustomLink({ to, children, ...props }) {
   const resolvedPath = useResolvedPath(to);
   const isActive = useMatch({ path: resolvedPath.pathname, end: true });
 
@@ -57,5 +97,3 @@ function CustomLink({ to, children, ...props }) {
     </li>
   );
 }
-
-export default Navbar;

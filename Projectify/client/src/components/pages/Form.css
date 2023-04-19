@@ -6,7 +6,7 @@
   background-color: #f1f1f1;
   width: 500px;  
   margin-top: 80px;
-  border-radius: 10px;
+  border-radius: 15px;
   background:linear-gradient(to left, #BCCCFE,#E2E7EB);
   float: right;
   margin-right: 100px;
@@ -21,11 +21,9 @@
   
   text-align: center;
 }
-.assign-drop{
-  margin-top: 30px;
-}
 
 .assign-drop{
+  margin-top: 30px;
   width: 100%;
   padding-top: 10px;
   padding: 12px 20px;
@@ -35,15 +33,33 @@
   box-sizing: border-box;
   font-family: Georgia, serif;
 }
-.assign-card-text{
+
+.assign-card-text {
   width: 100%;
   display: block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   font-family: Georgia, serif;
-  margin-left: 0px;
+  padding: 12px 20px;
+  margin-bottom: 10px;
 }
+
+.assign-card-text1 {
+  width: 100%;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Georgia, serif;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+}
+.assign-project{
+  width:100%
+}
+
+
 .assign-button{
   margin-top: 20px;
   margin-left: 5%;

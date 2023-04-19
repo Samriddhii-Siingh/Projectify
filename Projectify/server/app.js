@@ -25,12 +25,13 @@ mongoose
 require("./projectifyDB");
 
 const Student = mongoose.model("student_data");
+const Mentor = mongoose.model("mentor_data");
 
 app.post("/signup", async(req, res) => {
-    const { first_name, last_name, email, reg_no, password } = req.body;
+    const { first_name, last_name, email, reg_no, password,designation} = req.body;
 
     const encryptedPassword = await bcrypt.hash(password, 10);
-
+    if(designation=="student"){
     try {
         const oldUser = await Student.findOne({ email });
 
@@ -47,12 +48,33 @@ app.post("/signup", async(req, res) => {
         res.send({status : "ok"});
     } catch (error) {
         res.send({ status: "error"})
+    }}
+    else if(designation=="mentor")
+    {
+        try {
+            const oldUser = await Mentor.findOne({ email });
+    
+            if(oldUser) {
+                return res.send({ error: "User already exists"});
+            }
+            await Mentor.create({
+                first_name,
+                last_name,
+                email,
+                reg_no,
+                password: encryptedPassword
+            });
+            res.send({status : "ok"});
+        } catch (error) {
+            res.send({ status: "error"})
+        }   
     }
 });
 
 app.post("/login", async(req,res) => {
-    const { email, password } = req.body;
-
+    const { email, password,designation } = req.body;
+    if(designation === "student")
+    {
     const user = await Student.findOne({ email });
     if(!user) {
         return res.json({ error: "User not found" });
@@ -67,6 +89,24 @@ app.post("/login", async(req,res) => {
         }
     }
     res.json({ status: "error", error: "Invalid Password"});
+}
+else if(designation === "mentor")
+{
+    const user = await Mentor.findOne({ email });
+    if(!user) {
+        return res.json({ error: "User not found" });
+    }
+    if(await bcrypt.compare(password, user.password)) {
+        const token = jwt.sign({ email: user.email}, JWT_SECRET);
+
+        if(res.status(201)) {
+            return res.json({ status: "ok", data: token});
+        } else {
+            return res.json({ error: "error"});
+        }
+    }
+    res.json({ status: "error", error: "Invalid Password"});
+}
 });
 
 app.post("/userData", async (req,res) => {
@@ -75,13 +115,24 @@ app.post("/userData", async (req,res) => {
         const user = jwt.verify(token, JWT_SECRET);
 
         const usermail = user.email;
-        Student.findOne({ email: usermail })
-            .then((data) => {
-                res.send({ status: "ok", data: data});
-            })
-            .catch((error) => {
-                res.send({ status: "error", data: error})
-            })
+
+        if(designation === "student") {
+            Student.findOne({ email: usermail })
+                .then((data) => {
+                    res.send({ status: "ok", data: data});
+                })
+                .catch((error) => {
+                    res.send({ status: "error", data: error})
+                })
+        } else if (designation === "mentor") {
+            Mentor.findOne({ email: usermail })
+                .then((data) => {
+                    res.send({ status: "ok", data: data});
+                })
+                .catch((error) => {
+                    res.send({ status: "error", data: error})
+                })
+        }
     } catch (error) {
         
     }

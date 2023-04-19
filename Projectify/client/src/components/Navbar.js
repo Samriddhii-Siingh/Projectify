@@ -61,9 +61,9 @@ export default class Navbar extends Component {
             <CustomLink to="/">Home</CustomLink>
             <CustomLink to="/project">Projects</CustomLink>
             {localStorage.getItem("token") ? (
-              <div className="navdash">
-                <CustomLink to="/form" className="">Form</CustomLink>
-                <CustomLink to="/dashboard" className="">Dashboard</CustomLink>
+              <div>
+                <CustomLink to="/form">Form</CustomLink>
+                <CustomLink to="/dashboard">Dashboard</CustomLink>
                 <CustomLink to="/logout" id="login_signup" onClick={this.logOut}>
                   LogOut
                 </CustomLink>

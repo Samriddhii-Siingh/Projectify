@@ -27,12 +27,13 @@ require("./projectifyDB");
 const Student = mongoose.model("student_data");
 const Mentor = mongoose.model("mentor_data");
 const Project = mongoose.model("project_data");
+const Assignment = mongoose.model("assign_data");
 
 app.post("/signup", async(req, res) => {
     const { first_name, last_name, email, reg_no, password,designation} = req.body;
 
     const encryptedPassword = await bcrypt.hash(password, 10);
-    if(designation=="student"){
+    if(designation==="student"){
     try {
         const oldUser = await Student.findOne({ email });
 
@@ -51,7 +52,7 @@ app.post("/signup", async(req, res) => {
     } catch (error) {
         res.send({ status: "error"})
     }}
-    else if(designation=="mentor")
+    else if(designation==="mentor")
     {
         try {
             const oldUser = await Mentor.findOne({ email });
@@ -83,7 +84,7 @@ app.post("/login", async(req,res) => {
         return res.json({ error: "User not found" });
     }
     if(await bcrypt.compare(password, user.password)) {
-        const token = jwt.sign({ email: user.email, designation: user.designation }, JWT_SECRET);
+        const token = jwt.sign({ email: user.email, designation: user.designation, username:user.first_name, id:user.reg_no}, JWT_SECRET);
 
 
         if(res.status(201)) {
@@ -101,7 +102,7 @@ else if(designation === "mentor")
         return res.json({ error: "User not found" });
     }
     if(await bcrypt.compare(password, user.password)) {
-        const token = jwt.sign({ email: user.email, designation: user.designation }, JWT_SECRET);
+        const token = jwt.sign({email: user.email, designation: user.designation, username:user.first_name, id:user.reg_no }, JWT_SECRET);
 
         if(res.status(201)) {
             return res.json({ status: "ok", data: token});
@@ -144,7 +145,7 @@ app.post("/userData", async (req,res) => {
 });
 
 app.post("/upload", async(req,res)=>{
-const { mentor_name,mentor_id, project_name,project_id, project_description,tech_used, domain} = req.body;
+const {mentor_name, mentor_id,project_name,project_id, project_description, domain, tech_used} = req.body;
 try {
     const oldId=await Project.findOne({project_id});
     if(oldId)
@@ -157,14 +158,32 @@ try {
         project_name,
         project_id, 
         project_description,
-        tech_used, 
-        domain
+        domain,
+        tech_used
     });
     res.send({status:"ok"});
 } catch (error) {
     res.send({status:"error"});
 }
 });
+
+app.post("/form", async(req,res)=>{
+    const {student_name, student_id, mentor_name, mentor_id,project_name,project_id, domain } = req.body;
+    try {
+        await Project.create({
+            student_id,
+            student_name,
+            mentor_name,
+            mentor_id,
+            project_name,
+            project_id,
+            domain,
+        });
+        res.send({status:"ok"});
+    } catch (error) {
+        res.send({status:"error"});
+    }
+    });
 
 app.get('/projects', async (req, res) => {
     try {
@@ -174,12 +193,38 @@ app.get('/projects', async (req, res) => {
       console.error(err.message);
       res.status(500).send('Server Error');
     }
-  });
+});
 
-app.get('/projects/dropdown/:name', async (req, res) => {
-    const { name } = req.params;
-    const dropdown = await Project.findOne({ name });
-    res.json(dropdown.options);
+app.get("/api/projects", async (req, res) => {
+try {
+    const projects = await Project.find().exec();
+    res.send(projects);
+} catch (error) {
+    res.status(500).send(error);
+}
+});
+
+app.post("/assignment", async(req, res) => {
+    const { student_id, student_name, mentor_id, mentor_name, project_id, project_name, domain} = req.body;
+
+    try {
+        await Assignment.create({
+            student_id, student_name, mentor_id, mentor_name, project_id, project_name, domain
+        });
+        res.send({status : "ok"});
+    } catch (error) {
+        res.send({ status: "error"})
+    }
+});
+
+app.get('/assignData', async (req, res) => {
+    try {
+      const assignments = await Assignment.find();
+      res.json(assignments);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server Error');
+    }
 });
 
 app.listen(5000, () => {

@@ -1,3 +1,4 @@
+
 .upload-card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
@@ -10,23 +11,22 @@
     float: right;
     margin-right: 100px;
     position: relative;
-    height: 600px; /* added height property */
+   margin-bottom: 100px;
   }
   
-  .upload-img {
-    margin-top: 80px;
+  .upload-img img{
+    margin-top: 100px;
     margin-left: 100px;
     width: 600px;
     float: left;
+    border-radius: 50%;
   }
   
-  
-  input[type="textArea"] {
-    height: 100px;
-    padding-top: 0px;
-  }
-  
-  input {
+  .upload-mentor,
+  .upload-lang,
+  .upload-domain,
+  .upload-project,
+  .upload-desc {
     margin-top: 20px;
     height: 40px;
     border: none;
@@ -36,18 +36,22 @@
     background: white;
     padding-left: 10px;
     font-size: 16px;
+    resize: none;
   }
-  
+  .upload-desc{
+    height: 100px;
+  }
   .upload-header {
     text-align: center;
     font-family: 'Patua One', cursive;
   }
   
   .upload-mentor,
+  .upload-lang,
   .upload-project,
   .upload-domain,
   .upload-lang {
-    width: 215px;
+    width: 91%; 
   }
   
   .upload-require,
@@ -59,6 +63,7 @@
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    
     }
     
     .upload-submit,
@@ -71,7 +76,7 @@
     font-size: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin: 0 10px;
+    margin: 0 40px;
     }
     
     .upload-submit:hover,

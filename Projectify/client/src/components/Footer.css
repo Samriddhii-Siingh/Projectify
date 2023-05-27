@@ -7,7 +7,7 @@
   position: static;
   display: flex;
   flex-direction: column;
-  margin-top: 30%; /* Set a top margin for the footer */
+  /* Set a top margin for the footer */
   bottom: 0;
   width: 100%;
 }

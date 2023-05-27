@@ -6,6 +6,7 @@ export default class Upload extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      userData: "",
       mentor_name: "",
       mentor_id: "",
       project_name: "",
@@ -14,10 +15,50 @@ export default class Upload extends Component {
       domain: "",
       tech_used: "",
     };
+    
     this.handleSubmit = this.handleSubmit.bind(this);
+    
   }
+
+  componentDidMount() {
+    fetch("http://localhost:5000/userData", {
+      method: "POST",
+      crossDomain: true,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({
+        token: window.localStorage.getItem("token"),
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+  
+        this.setState({
+          userData: data.data,
+          mentor_name: data.data.first_name,
+          mentor_id: data.data.reg_no,
+        });
+  
+        console.log(data, "userData");
+        this.setState({ userData: data.data });
+        
+        if (data.data === "token expired") {
+          alert("Token expired login again");
+          window.localStorage.clear();
+          window.location.href = "./login";
+        }
+      });
+  }
+  
+
   handleSubmit(e) {
     e.preventDefault();
+
+    
+
     const {
       mentor_name,
       mentor_id,
@@ -27,6 +68,17 @@ export default class Upload extends Component {
       domain,
       tech_used,
     } = this.state;
+
+    if (this.state.mentor_name !== this.state.userData.first_name) {
+      alert("Mentor name does not match");
+      return false;
+    }
+    if(this.state.mentor_id !== this.state.userData.reg_no) {
+      alert("Mentor Id does not match");
+      return false;
+    }
+    
+
     console.log(
       mentor_name,
       mentor_id,
@@ -57,9 +109,13 @@ export default class Upload extends Component {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data, "Project Upload Successful");
         if (data.status == "ok") {
+          console.log(data, "Project Upload Successful");
           alert("Uploaded Successfully");
+        }
+        else {
+          console.log(data)
+
         }
       })
   }
@@ -73,23 +129,10 @@ export default class Upload extends Component {
         <div className="upload-card">
           <h1 className="upload-header">Project Form</h1>
           <form className='upload-form'>
-            <input 
-              type="text" 
-              className="upload-mentor" 
-              placeholder="Mentor Name" 
-              onChange={e => this.setState({ mentor_name: e.target.value })}
-              required 
-              pattern="[A-Za-z]+\s[A-Za-z]+"
-            />
 
-            <input
-              type="text"
-              className="upload-mentor"
-              placeholder="Mentor ID"
-              pattern="[A-Za-z0-9]{9}"
-              onChange={e => this.setState({ mentor_id: e.target.value })}
-              required
-            />
+            <input type="text" className="upload-mentor" placeholder="Mentor Name" onChange={e => this.setState({ mentor_name: e.target.value })} />
+
+            <input type="text" className="upload-mentor" placeholder="Mentor Id" onChange={e => this.setState({ mentor_id: e.target.value })} required pattern=".{5,}" />
 
             <br />
             <input type="text" className="upload-project" placeholder="Project Title" onChange={e => this.setState({ project_name: e.target.value })} required pattern=".{5,}" title="Title must be at least 5 characters long" />
@@ -102,9 +145,9 @@ export default class Upload extends Component {
               onChange={e => {
                 const value = e.target.value;
                 if (value.split(' ').length < 5) {
-                  alert('Description must be at least 5 words long.');
+                  //alert('Description must be at least 5 words long.');
                 } else {
-                  this.setState({ project_description: value });
+                  this.setState({ project_description: e.target.value });
                 }
               }}>
             </textarea>

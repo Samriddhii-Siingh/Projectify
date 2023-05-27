@@ -44,9 +44,10 @@ class SignUp extends React.Component {
     })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data, "SignUp successful");
+      
       if(data.status == "ok") {
         alert("Signup successful");
+        console.log(data, "SignUp successful");
 
         window.location.href = "./login";
       }
@@ -117,12 +118,8 @@ class SignUp extends React.Component {
               type="text"
               className="signup-reg_no"
               placeholder="Registration Number"
-              onChange={e => {
-                const re = /^\d{9}$/;
-                if (re.test(e.target.value)) {
-                  this.setState({ reg_no: e.target.value });
-                }
-              }}
+              onChange={e => this.setState({reg_no: e.target.value})}
+              
               required
               onInvalid={(e) => {
                 e.target.setCustomValidity("Registration Number must be a 9-digit number");

@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component} from "react";
+import { Link } from "react-router-dom";
 import "./Dashboard.css";
-
 import { FaLinkedin, FaEnvelope, FaGithub } from 'react-icons/fa';
 
 export default class Dashboard extends Component {
@@ -10,7 +10,6 @@ export default class Dashboard extends Component {
       userData: "",
     }
   }
-
     componentDidMount() {
         fetch("http://localhost:5000/userData", {
       method: 'POST',
@@ -64,10 +63,8 @@ export default class Dashboard extends Component {
               <p>Web Development</p>
               <h3>Language(s) known:</h3>
               <p>HTML, CSS, JavaScript, React.js</p>
-    
               <hr />
             </div>
-    
             <div className="dashboard-lower-container">
               <div className="dashboard-social-handle">
                 <a href={"mailto:" + this.state.userData.email}>
@@ -86,58 +83,21 @@ export default class Dashboard extends Component {
         </div>
   
         <div className="dashboard-project-status">
-          <div className="dashboard-project-container">
+          
+        <Link className="dashboard-link" to="/timeLine">
+          <div className="dashboard-project-container" >
             <div className="dashboard-project-detail">
               <h2>Project Title</h2>
               <h4>Project-ID</h4>
               <h3>Mentor Name</h3>
-            </div>
-            <div className="dashboard-project-detail">
-              <h2>Project Title</h2>
-              <h4>Project-ID</h4>
-              <h3>Mentor Name</h3>
-            </div>
-          </div>
+            </div>            
+          </div></Link>
         </div>
   
         <div className="dashboard-notifi-box" id="box">
           <h2>
-            Notifications <span>17</span>
+            Notifications <span></span>
           </h2>
-          <div className="dashboard-notifi-item">
-            <div className="dashboard-notifi-text">
-              <h4>Elias Abdurrahman</h4>
-              <p>@lorem ipsum dolor sit amet</p>
-            </div>
-          </div>
-  
-          <div className="dashboard-notifi-item">
-            <div className="dashboard-notifi-text">
-              <h4>John Doe</h4>
-              <p>@lorem ipsum dolor sit amet</p>
-            </div>
-          </div>
-  
-          <div className="dashboard-notifi-item">
-            <div className="dashboard-notifi-text">
-              <h4>Emad Ali</h4>
-              <p>@lorem ipsum dolor sit amet</p>
-            </div>
-          </div>
-  
-          <div className="dashboard-notifi-item">
-            <div className="dashboard-notifi-text">
-              <h4>Ekram Abu </h4>
-              <p>@lorem ipsum dolor sit amet</p>
-            </div>
-          </div>
-  
-          <div className="dashboard-notifi-item">
-            <div className="dashboard-notifi-text">
-              <h4>Jane Doe</h4>
-              <p>@lorem ipsum dolor sit amet</p>
-            </div>
-          </div>
         </div>
   
         <div className="dashboard-request-container">

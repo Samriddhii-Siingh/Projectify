@@ -1,18 +1,16 @@
-.signup-state{
-    background: #BCCCFE;
-    background: local;    
-}
+
 .signup-card {  
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
     background-color: #f1f1f1;
     width: 500px;  
     height: 600px;
-    margin-top: 60px;
+    margin-top: 50px;
     margin-right: 100px;
     border-radius: 10px;
     background:linear-gradient(to right, #BCCCFE,#5F6BDD);
     float: right;
+    margin-bottom: 50px;
 }
 .signup-header{
     text-align: center;
@@ -25,19 +23,22 @@
     font-family: 'Patua One',cursive;
 }
 .signup-name{
-    width: 44.8%;
+    width: 46.4%;
+    margin-left: 0%;
+    
 }
 .signup-email{
     width: 95%;
 }
-input[type="text"]
+.signup-name,
+.signup-reg_no
 {
     margin-top: 20px;
     height: 40px;
     border: none;
     border-radius: 10px;
     font-family: 'Patua One',cursive;
-    margin-left: 20px;
+    margin-left: 10px;
     background: white;
 }
 .signup-reg_no{
@@ -93,16 +94,7 @@ input[type="radio"]{
     background: fixed;
     size: 5px;   
 }
-input[type="number"] {
-    width: 95%;
-    margin-top: 20px;
-    height: 40px;
-    border: none;
-    border-radius: 10px;
-    font-family: "Patua One", cursive;
-    margin-left: 10px;
-    background: white;
-  }
+
   .signup-designation-note{
     background: fixed;
     font-size: 19px;

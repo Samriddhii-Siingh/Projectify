@@ -13,7 +13,7 @@ import ContactUs from "./components/pages/ContactUs";
 import Services from "./components/pages/Services";
 import PrivacyPolicy from "./components/pages/PrivacyPolicy";
 import { Route, Routes } from "react-router-dom";
-
+import TimeLine from "./components/pages/timeline";
 export default function App() {
   const isLoggedIn = window.localStorage.getItem("loggedIn");
   return (
@@ -29,6 +29,7 @@ export default function App() {
           <Route path="/form" element={<Form />} />
           <Route path="/upload" element={<Upload/>}/>
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/timeLine" element={<TimeLine/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route exact path="/" element={isLoggedIn == "true" ? <Dashboard /> : <Login />} />
